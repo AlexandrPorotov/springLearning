@@ -1,0 +1,33 @@
+Внедрение зависимостей DI
+
+В первой части было реализовано внедрение через конструктор.
+В классе мы прописываем следующее:
+
+public MusicPlayer(Music music){
+    this.music = music;
+    }
+
+Таким образом, мы передаем объект необходимый для работы класса MusicPlayer через конструктор при его создании.
+Затем мы прописываем это условие в конфигурационном файле.
+
+    <bean id = "musicPlayer"
+          class="DependencyInjectionPathOne.MusicPlayer">
+        <constructor-arg ref="musicBean" />  /* говорим Spring о том, что необходимо при создании класса передать ему bean Music.
+    </bean>
+
+Во второй части будем внедрять зависимости через setter.
+
+public void setMusic(Music music){
+    this.music = music;
+}
+
+Конфигурация bean MusicPlayer.
+
+    <bean id = "musicPlayer"
+          class="DependencyInjectionPathOne.MusicPlayer">
+        <property name = "music" ref = "musicBean"/>
+    </bean>
+
+Так же можно внедрять примитивы, а не только ссылки.
+
+Так же можно проводить внедрения из внешних файлов.
