@@ -13,9 +13,9 @@
           class="DependencyInjectionPathTwo.ClassicalMusic">
     </bean>
     <bean id = "musicPlayer"
-          class="DependencyInjectionPathTwo.MusicPlayer">
+          class="DependencyInjectionPathTwo.MusicPlayer"
+          scope="prototype">
         <property name = "music" ref="musicBean"/>
-
         <property name="name" value= "${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
