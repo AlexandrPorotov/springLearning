@@ -12,6 +12,18 @@
     <bean id = "musicBean"
           class="DependencyInjectionPathTwo.ClassicalMusic">
     </bean>
+    <bean id = "countObject"
+          class="BeanLifecycle.Count"
+          destroy-method="destroyCount">
+        <property name="count" value="0"/>
+    </bean>
+    <bean id = "testBeanLC"
+          class = "BeanLifecycle.TestBeanLC"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          scope="prototype">
+        <property name="count" ref="countObject"/>
+    </bean>
     <bean id = "musicPlayer"
           class="DependencyInjectionPathTwo.MusicPlayer"
           scope="prototype">
