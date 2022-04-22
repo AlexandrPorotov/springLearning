@@ -11,6 +11,11 @@ public class MainInjectionTest {
 
         context.close();
         /*Создан объект - TestInsideBean
-          Создан объект - InjectionTest и в него внедрен TestInsideBean с помощью @Autowired*/
+          Создан объект - InjectionTest и в него внедрен TestInsideBean с помощью @Autowired
+          Внимательно необходимо использовать данную аннотацию с интерфейсами. Потому что если мы
+          в аргументах метода пропишем интерфейс, а реализаций будет несколько, Spring не поймет
+          какую именно необходимо взять и внедрить.
+          Аннотация Qualifier. Примеры - one and two.
+          */
     }
 }
