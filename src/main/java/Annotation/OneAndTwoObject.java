@@ -9,17 +9,17 @@ public class OneAndTwoObject {
 
     private OneAndTwo oneAndTwo;
 
-    private Two two;
-
     @Autowired
-    public void setTwo(Two two) {
-        this.two = two;
+    @Qualifier("two")
+    public void setTwo(OneAndTwo oneAndTwo) {
+        this.oneAndTwo = oneAndTwo;
+        System.out.println("Объект two внедрен через сеттер");
     }
 
     @Autowired
     public OneAndTwoObject(@Qualifier("one") OneAndTwo oneAndTwo){
         System.out.println("OneAndTwoObject создан");
-        System.out.println("Внедрен объект one");
+        System.out.println("Внедрен объект one через конструктор");
     }
     /*Внедрение зависимости через сеттер тоже самое
     * через поле тоже
@@ -28,4 +28,5 @@ public class OneAndTwoObject {
     *
     * Все способы работают одинаково, однако если выбрал для проекта один стиль внедрения,
     * лучше придерживаться его везде в проекте.*/
+
 }

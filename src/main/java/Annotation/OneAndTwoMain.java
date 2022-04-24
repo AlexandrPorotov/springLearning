@@ -11,6 +11,11 @@ public class OneAndTwoMain {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         OneAndTwoObject oneAndTwoObject = context.getBean(OneAndTwoObject.class);
+        /*Класс One создан
+        OneAndTwoObject создан
+        Внедрен объект one через конструктор
+        Класс Two создан
+        Объект two внедрен через сеттер*/
 
         context.close();
 

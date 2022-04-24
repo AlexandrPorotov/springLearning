@@ -7,7 +7,10 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-        <context:component-scan base-package="Annotation"/>
+        <!--<context:component-scan base-package="Annotation"/>-->
+        <context:component-scan base-package="AnnotationPartTwo"/>
+        <context:property-placeholder location = "classpath:car.properties"/>
+
 <!--    <context:property-placeholder location = "classpath:musicPlayer.properties"/>
 
     <bean id = "musicBean"
